@@ -10,7 +10,7 @@ using namespace std;
 
 class Board{
     private:
-       size_t length;
+       int length;
        Spot **b;
     
     public:
