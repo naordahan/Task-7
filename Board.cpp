@@ -9,7 +9,7 @@ Board::Board(){
  char c[NULL][NULL];
 }
 
-Board::Board(uint length2){
+Board::Board(t_size length2){
 length=length2;
  b = new Spot*[length];
  
