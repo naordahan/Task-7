@@ -15,12 +15,12 @@ class Board{
     
     public:
        Board();
-       Board(size_t length);
+       Board( int length);
        Board(const Board& b2);
        Spot& operator[](Coordinate p2)const;
        Board& operator=(char in);
        Board& operator=(const Board& b2);
-       bool operator==(const Board &b2) const;
+       bool operator==(const Board &b2) const
     
        friend ostream& operator<< (ostream& os, const Board& b);//output
        ~Board(); 
