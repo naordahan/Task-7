@@ -10,10 +10,11 @@ using namespace std;
 
 class Board{
     private:
-       int length;
+
        Spot **b;
     
-    public:
+    public:       
+       int length;
        Board();
        Board( int length);
        Board(const Board& b2);
