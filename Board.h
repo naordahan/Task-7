@@ -20,7 +20,7 @@ class Board{
        Spot& operator[](Coordinate p2)const;
        Board& operator=(char in);
        Board& operator=(const Board& b2);
-       bool operator==(const Board &b2) const
+       bool operator==(const Board &b2) const;
     
        friend ostream& operator<< (ostream& os, const Board& b);//output
        ~Board(); 
