@@ -35,7 +35,7 @@ Board::Board(const Board& b2){
     }  
 }
 
-uint size()
+int size()
 {
  return this->size;
 }
