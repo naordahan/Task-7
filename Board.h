@@ -9,10 +9,11 @@ using namespace std;
 
 class Board{
     private:
-       size_t size;
+       
        Spot **b;
     
     public:
+       size_t size;
        Board();
        Board(int size);
        Board(const Board& b2);
