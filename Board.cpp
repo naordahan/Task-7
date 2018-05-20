@@ -35,6 +35,11 @@ Board::Board(const Board& b2){
     }  
 }
 
+uint size()
+{
+ return this->size;
+}
+
 Spot& Board::operator[](Coordinate p2) const{
      if((p2.x>=size)||(p2.y>=size)){throw IllegalCoordinateException(p2.x,p2.y);}
     return b[p2.x][p2.y];
