@@ -18,7 +18,7 @@ class Board{
        Board();
        Board(uint size);
        Board(const Board& b2);
-       uint size();
+       int size();
        Spot& operator[](Coordinate p2)const;
        Board& operator=(char in);
        Board& operator=(const Board& b2);
