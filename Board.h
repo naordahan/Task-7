@@ -10,13 +10,12 @@ using namespace std;
 
 class Board{
     private:
-       uint size;
+       uint length;
        Spot **b;
     
     public:
-       
        Board();
-       Board(uint size);
+       Board(int length);
        Board(const Board& b2);
        int size();
        Spot& operator[](Coordinate p2)const;

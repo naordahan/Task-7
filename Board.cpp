@@ -5,27 +5,27 @@ using namespace std;
 #include "Board.h"
 
 Board::Board(){
- size=0;
+ length=0;
  char c[NULL][NULL];
 }
 
-Board::Board(uint size2){
-size=size2;
- b = new Spot*[size];
+Board::Board(int length2){
+length=length2;
+ b = new Spot*[length];
  
-    for(int i = 0; i < size; i++){
-        b[i] = new Spot[size]; //On heap remember to delete from the heap!!
+    for(int i = 0; i < length; i++){
+        b[i] = new Spot[length]; //On heap remember to delete from the heap!!
     }
         
 }
 
 Board::Board(const Board& b2){
-    size=b2.size;
-    b=new Spot*[size];
-    for(int i=0;i<size;i++)
-    b[i]=new Spot[size];
-    for(int i=0;i<size;i++)
-    for(int j=0;j<size;j++){
+    length=b2.length;
+    b=new Spot*[length];
+    for(int i=0;i<length;i++)
+    b[i]=new Spot[length];
+    for(int i=0;i<length;i++)
+    for(int j=0;j<length;j++){
         // b[i][j].c='*';
         char c2=b2.b[i][j].c;
         Spot t(i,j,c2);
@@ -35,21 +35,21 @@ Board::Board(const Board& b2){
     }  
 }
 
-int size()
-{
- return this->size;
+Spot& Board::operator[](Coordinate p2) const{
+     if((p2.x>=length)||(p2.y>=length)){throw IllegalCoordinateException(p2.x,p2.y);}
+    return b[p2.x][p2.y];
 }
 
-Spot& Board::operator[](Coordinate p2) const{
-     if((p2.x>=size)||(p2.y>=size)){throw IllegalCoordinateException(p2.x,p2.y);}
-    return b[p2.x][p2.y];
+int size ()
+{
+    return this->length;
 }
 
 Board& Board::operator=(char in){
     if((in!='.')&&(in!='X')&&(in!='O')){throw IllegalCharException(in);}
-    for(int i=0;i<size;i++)
+    for(int i=0;i<length;i++)
     {
-        for(int j=0;j<size;j++)
+        for(int j=0;j<length;j++)
         {
           Spot t(i,j,in);
            b[i][j]=t;
@@ -68,19 +68,19 @@ Board& Board::operator=(const Board& b2)
         
     }
     
-    for(int i=0; i<size; i++)
+    for(int i=0; i<length; i++)
     {
         delete[] b[i];
     } 
     
     delete[]b;
-    size=b2.size;
-    b=new Spot*[size];
+    length=b2.length;
+    b=new Spot*[length];
     
-    for(int i=0;i<size;i++)
+    for(int i=0;i<length;i++)
     {
-        b[i]=new Spot[size];
-        for(int j=0;j<size;j++)
+        b[i]=new Spot[length];
+        for(int j=0;j<length;j++)
         {
             char c2=b2.b[i][j].c;
             Spot t(i,j,c2);
@@ -93,8 +93,8 @@ Board& Board::operator=(const Board& b2)
 
 
 ostream& operator<< (ostream& os, const Board& temp_b){
-    for(int i=0;i<temp_b.size;i++){
-        for(int j=0;j<temp_b.size;j++){
+    for(int i=0;i<temp_b.length;i++){
+        for(int j=0;j<temp_b.length;j++){
             os<<temp_b.b[i][j].c;
         }
         os<<endl;
@@ -104,16 +104,16 @@ ostream& operator<< (ostream& os, const Board& temp_b){
 }
     
 Board::~Board(){
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < length; i++){
          delete[] b[i];
     }
     delete[] b;
         
 }
  bool Board::operator==(const Board &b2) const{
-        if(size!=b2.size){return false;}
-        for(int i=0;i<size;i++){
-         for(int j=0;j<size;j++){
+        if(length!=b2.length){return false;}
+        for(int i=0;i<length;i++){
+         for(int j=0;j<length;j++){
              if(b[i][j]!=b2.b[i][j]){return false;}
          }
         }
@@ -122,12 +122,12 @@ Board::~Board(){
 
 
 // char Board::operator[](Coordinate p2)const{
-//     if((p2.x>=size)||(p2.y>=size)){throw IllegalCoordinateException(p2.x,p2.y);}
+//     if((p2.x>=length)||(p2.y>=length)){throw IllegalCoordinateException(p2.x,p2.y);}
 //     return b[p2.x][p2.y].c;
 // }
 
 // Spot Board::operator[](Coordinate p2)const{
-//     if((p2.x>=size)||(p2.y>=size)){throw IllegalCoordinateException(p2.x,p2.y);}
+//     if((p2.x>=length)||(p2.y>=length)){throw IllegalCoordinateException(p2.x,p2.y);}
 //     return b[p2.x][p2.y];
 // }
 
