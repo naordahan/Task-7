@@ -48,8 +48,3 @@ bool TicTacToe::FullBoard(Board& ptr)
 TicTacToe::~TicTacToe()
 {
 }
-
-int TicTacToe::getSize()
-{
-	return TicTacToe::size;
-}
