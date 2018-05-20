@@ -51,5 +51,5 @@ TicTacToe::~TicTacToe()
 
 int TicTacToe::getSize()
 {
-	return; TicTacToe::size;
+	return TicTacToe::size;
 }
