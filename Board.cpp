@@ -42,7 +42,7 @@ Spot& Board::operator[](Coordinate p2) const{
 
 int size ()
 {
-    return this.length;
+    return length;
 }
 
 Board& Board::operator=(char in){
