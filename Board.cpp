@@ -9,7 +9,7 @@ Board::Board(){
  char c[NULL][NULL];
 }
 
-Board::Board(int size2){
+Board::Board(t_size size2){
 size=size2;
  b = new Spot*[size];
  
@@ -43,21 +43,28 @@ Spot& Board::operator[](Coordinate p2) const{
 Board& Board::operator=(char in){
     if((in!='.')&&(in!='X')&&(in!='O')){throw IllegalCharException(in);}
     for(int i=0;i<size;i++)
-    for(int j=0;j<size;j++){
-        Spot t(i,j,in);
-        b[i][j]=t;
+    {
+        for(int j=0;j<size;j++)
+        {
+          Spot t(i,j,in);
+           b[i][j]=t;
        
         
-    } 
+         } 
+    }
+    return *this;
 }
 
-Board& Board::operator=(const Board& b2){
-    if(this==&b2){
+Board& Board::operator=(const Board& b2)
+{
+    if(this==&b2)
+    {
         return *this;
         
     }
     
-    for(int i=0; i<size; i++){
+    for(int i=0; i<size; i++)
+    {
         delete[] b[i];
     } 
     
@@ -65,16 +72,18 @@ Board& Board::operator=(const Board& b2){
     size=b2.size;
     b=new Spot*[size];
     
-    for(int i=0;i<size;i++){
+    for(int i=0;i<size;i++)
+    {
         b[i]=new Spot[size];
-        for(int j=0;j<size;j++){
+        for(int j=0;j<size;j++)
+        {
             char c2=b2.b[i][j].c;
             Spot t(i,j,c2);
             b[i][j]=t;
         }  
     }
-    
- }
+   return *b; 
+}
 
 
 

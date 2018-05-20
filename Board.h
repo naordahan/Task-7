@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include<stdint.h>
 using namespace std;
 #include "Spot.h"
 #include "IllegalCoordinateException.h"
@@ -9,13 +10,12 @@ using namespace std;
 
 class Board{
     private:
-       
+       size_t size;
        Spot **b;
     
     public:
-       size_t size;
        Board();
-       Board(int size);
+       Board(size_t size);
        Board(const Board& b2);
        Spot& operator[](Coordinate p2)const;
        Board& operator=(char in);
