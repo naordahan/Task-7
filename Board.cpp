@@ -40,7 +40,7 @@ Spot& Board::operator[](Coordinate p2) const{
     return b[p2.x][p2.y];
 }
 
-const int Board::size  ()
+ int Board::size () const
 {
     return length;
 }
