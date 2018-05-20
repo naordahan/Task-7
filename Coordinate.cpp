@@ -2,7 +2,7 @@
 using namespace std;
 #include "Coordinate.h"
 
-Coordinate::Coordinate(int x2,int y2){
+Coordinate::Coordinate(uint x2,uint y2){
         this->x=x2;
         this->y=y2;
 }
