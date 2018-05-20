@@ -14,7 +14,7 @@ class Board{
        Spot **b;
     
     public:
-       int size;
+       uint size;
        Board();
        Board(int size);
        Board(const Board& b2);
