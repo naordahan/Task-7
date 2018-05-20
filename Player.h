@@ -6,7 +6,7 @@
 class Player {
 
 private:
-char ch;
+char MyChar;
 string Player_name;
 
 public:
