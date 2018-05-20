@@ -13,7 +13,7 @@ TicTacToe::TicTacToe(int size)
 
 void TicTacToe::play(Player xPlayer, Player oPlayer)
 {
-	while (!FullBoard(this->GameBoard) || !winner())
+	while (!FullBoard(this->Game_Board) || !winner())
 	{
 
 	}
