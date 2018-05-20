@@ -6,10 +6,10 @@
 class Player {
 
 private:
-char myChar;
 string Player_name;
 
 public:
+	char myChar;
 	virtual const string  name()const;
 	virtual const Coordinate play(const Board& board) ;
 	char getChar();
