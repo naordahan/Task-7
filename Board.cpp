@@ -82,7 +82,7 @@ Board& Board::operator=(const Board& b2)
             b[i][j]=t;
         }  
     }
-   return &b; 
+   return *this; 
 }
 
 
