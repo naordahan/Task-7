@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include <exception>
-#include<stdint.h>
 using namespace std;
 #include "Spot.h"
 #include "IllegalCoordinateException.h"
