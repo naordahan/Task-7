@@ -10,14 +10,15 @@ using namespace std;
 
 class Board{
     private:
-       
+       uint size;
        Spot **b;
     
     public:
-       uint size;
+       
        Board();
        Board(uint size);
        Board(const Board& b2);
+       uint size();
        Spot& operator[](Coordinate p2)const;
        Board& operator=(char in);
        Board& operator=(const Board& b2);
