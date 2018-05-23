@@ -13,9 +13,9 @@ public:
 	// Player oPlayer;
 	Board game_board;
 	Player* win;
-// 	TicTacToe();
+ 	TicTacToe();
 	TicTacToe(uint length);
-// 	~TicTacToe();
+ 	~TicTacToe();
 	void xTurn (Player& xPlayer);
 	void oTurn (Player& xPlayer);
 	void play(Player& xPlayer,Player& oPlayer);
