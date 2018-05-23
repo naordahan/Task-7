@@ -1,4 +1,5 @@
-#include <iostream>
+ #pragma once
+ #include <iostream>
 using namespace std;
 #include "Coordinate.h"
 
@@ -18,6 +19,6 @@ class Spot{
        bool operator!=(char ch) const;
        friend ostream& operator<< (ostream& os, const Spot& s);
       // char operator=(const Spot& s);
-       //   Spot& operator[](Pair p_in);
+       //   Spot& operator[](Coordinate p_in);
 };
 

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Player.h"
 
 
@@ -28,7 +29,7 @@ public:
 /* 
    This player makes illegal moves - 
    it tries to override cells of the other player.
-   It should always lose. 
+   It should always lose.
 */
 class IllegalPlayer: public Player {
 public:

@@ -1,20 +1,26 @@
-#include <iostream>
-using namespace std;
-#include<string>
-#include <exception>
+
 #include "Board.h"
 
 Board::Board(){
  length=0;
- char c[NULL][NULL];
-}
+ b = new Spot*[length];
+ 
+    for(int i = 0; i < length; i++){
+        b[i] = new Spot[length]; //On heap
+    }
+        
 
-Board::Board(int length2){
+}
+// uint Board::size(){
+//     uint a=this->length;
+//     return a;
+// }
+Board::Board(uint length2){
 length=length2;
  b = new Spot*[length];
  
     for(int i = 0; i < length; i++){
-        b[i] = new Spot[length]; //On heap remember to delete from the heap!!
+        b[i] = new Spot[length]; //On heap
     }
         
 }
@@ -40,36 +46,24 @@ Spot& Board::operator[](Coordinate p2) const{
     return b[p2.x][p2.y];
 }
 
- int Board::size () const
-{
-    return length;
-}
-
 Board& Board::operator=(char in){
     if((in!='.')&&(in!='X')&&(in!='O')){throw IllegalCharException(in);}
     for(int i=0;i<length;i++)
-    {
-        for(int j=0;j<length;j++)
-        {
-          Spot t(i,j,in);
-           b[i][j]=t;
+    for(int j=0;j<length;j++){
+        Spot t(i,j,in);
+        b[i][j]=t;
        
         
-         } 
-    }
-    return *this;
+    } 
 }
 
-Board& Board::operator=(const Board& b2)
-{
-    if(this==&b2)
-    {
+Board& Board::operator=(const Board& b2){
+    if(this==&b2){
         return *this;
         
     }
     
-    for(int i=0; i<length; i++)
-    {
+    for(int i=0; i<length; i++){
         delete[] b[i];
     } 
     
@@ -77,18 +71,16 @@ Board& Board::operator=(const Board& b2)
     length=b2.length;
     b=new Spot*[length];
     
-    for(int i=0;i<length;i++)
-    {
+    for(int i=0;i<length;i++){
         b[i]=new Spot[length];
-        for(int j=0;j<length;j++)
-        {
+        for(int j=0;j<length;j++){
             char c2=b2.b[i][j].c;
             Spot t(i,j,c2);
             b[i][j]=t;
         }  
     }
-   return *this; 
-}
+    
+ }
 
 
 
@@ -104,10 +96,10 @@ ostream& operator<< (ostream& os, const Board& temp_b){
 }
     
 Board::~Board(){
-    for (int i = 0; i < length; i++){
+   /* for (int i = 0; i < length; i++){
          delete[] b[i];
     }
-    delete[] b;
+    delete[] b;*/
         
 }
  bool Board::operator==(const Board &b2) const{
