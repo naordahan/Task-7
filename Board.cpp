@@ -63,9 +63,9 @@ Board& Board::operator=(const Board& b2){
         
     }
     
-    for(int i=0; i<length; i++){
+    /*for(int i=0; i<length; i++){
         delete[] b[i];
-    } 
+    } */
     
     delete[]b;
     length=b2.length;
