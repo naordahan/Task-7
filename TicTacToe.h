@@ -4,7 +4,7 @@
 class TicTacToe
 {
 	int size;
-	Board Game_Board;
+	Board game_Board;
 
 public:	
 	TicTacToe();
