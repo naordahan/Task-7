@@ -3,10 +3,11 @@
 #include"Player.h"
 class TicTacToe
 {
-	int size;
+	
 	Board game_Board;
 
 public:	
+	int size;
 	TicTacToe();
 	virtual ~TicTacToe();
 	int getSize();
