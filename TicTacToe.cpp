@@ -1,7 +1,7 @@
 
-// #include <iostream>
+ #include <iostream>
 #include "TicTacToe.h"
-// using namespace std;
+ using namespace std;
 // Player& TicTacToe::winner()const
 // {
 // 	uint xCount=0;
@@ -105,16 +105,16 @@ Player& TicTacToe::winner()const
 
 //____________________________________________
 
-// TicTacToe::TicTacToe(){
+ TicTacToe::TicTacToe(){
 	
-// }
-// TicTacToe::~TicTacToe(){
+ }
+ TicTacToe::~TicTacToe(){
 // for (int i = 0; i < game_board.length; i++){
 //          delete[] game_board.b[i];
 //     }
 //     //delete[] game_board.b;
 //     // delete[] win;
-// }
+ }
 
 bool TicTacToe::FullBoard(Board& ptr){
 	for(int i=0;i<ptr.length;i++){
