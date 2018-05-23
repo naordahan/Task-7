@@ -140,8 +140,8 @@ TicTacToe::TicTacToe(uint length):game_board{length}{ }
 void TicTacToe::play(Player& xPlayer, Player& oPlayer)
 {game_board='.';
 bool flag=true;
-xPlayer.myChar('X');
- oPlayer.myChar('O');
+xPlayer.myChar='X';
+ oPlayer.myChar='O';
 	 while (flag&&(!FullBoard(game_board))&&(!check_win(game_board)))
 	{   try {if(game_board[{xPlayer.play(game_board)}].c=='O')
 	          {  
