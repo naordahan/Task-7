@@ -155,11 +155,11 @@ xPlayer.setChar('X');
 		if(flag)
 		{
 		   if(check_win(game_board)){return;}
-		  try {game_board[{xPlayer.play(game_board)}]='X';}
+		  try {game_board[{xPlayer.play(game_board)}].c='X';}
 		      
 		      catch(const string& ex)
 	            { game_board='.';
-	              game_board[{xPlayer.play(game_board)}]='X';
+	              game_board[{xPlayer.play(game_board)}].c='X';
 	              win=&oPlayer;
 	              flag=false;
 	             }
@@ -176,7 +176,7 @@ xPlayer.setChar('X');
 	        }
 	     catch(const string& ex)
 	            { game_board='.';
-	              game_board[{xPlayer.play(game_board)}]='X';
+	              game_board[{xPlayer.play(game_board)}].c='X';
 	              win=&xPlayer;
 	              flag=false;
 	             }
@@ -186,11 +186,11 @@ xPlayer.setChar('X');
 	    
 	    if(flag)
 	     {
-	    try {game_board[{oPlayer.play(game_board)}]='O';}
+	    try {game_board[{oPlayer.play(game_board)}].c='O';}
 	    
 	        catch(const string& ex)
 	            { game_board='.';
-	              game_board[{xPlayer.play(game_board)}]='X';
+	              game_board[{xPlayer.play(game_board)}].c='X';
 	              win=&xPlayer;
 	              flag=false;
 	             }
